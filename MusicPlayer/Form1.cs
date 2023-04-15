@@ -21,7 +21,8 @@ namespace MusicPlayer
     {
 
         public Form1()
-        {       
+        {
+            
             InitializeComponent();
             track_volume.Value = 20;
             lbl_volume.Text = "20%";
@@ -34,7 +35,7 @@ namespace MusicPlayer
 
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
             player.URL = paths[track_list.SelectedIndex];
             label1.Text = files[track_list.SelectedIndex]; // Вывод названия при клике 
             player.Ctlcontrols.play();
