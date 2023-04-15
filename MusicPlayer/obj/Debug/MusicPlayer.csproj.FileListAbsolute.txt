@@ -1,0 +1,17 @@
+D:\Projects\MusicPlayer\MusicPlayer\bin\Debug\MusicPlayer.exe.config
+D:\Projects\MusicPlayer\MusicPlayer\bin\Debug\MusicPlayer.exe
+D:\Projects\MusicPlayer\MusicPlayer\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Projects\MusicPlayer\MusicPlayer\bin\Debug\Interop.WMPLib.dll
+D:\Projects\MusicPlayer\MusicPlayer\bin\Debug\AxInterop.WMPLib.dll
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.AssemblyReference.cache
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.SuggestedBindingRedirects.cache
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\Interop.WMPLib.dll
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\AxInterop.WMPLib.dll
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.ResolveComReference.cache
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.Form1.resources
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.Properties.Resources.resources
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.Fody.CopyLocal.cache
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
+D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.exe
