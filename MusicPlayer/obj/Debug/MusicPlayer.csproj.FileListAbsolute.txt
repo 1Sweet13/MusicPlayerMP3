@@ -15,3 +15,4 @@ D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInpu
 D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.Fody.CopyLocal.cache
 D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
 D:\Projects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.exe
+D:\Projects\MusicPlayer\MusicPlayer\bin\Debug\eLearningSlidingLabel.cs

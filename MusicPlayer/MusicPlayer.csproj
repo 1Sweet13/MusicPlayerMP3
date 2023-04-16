@@ -185,6 +185,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="eLearningSlidingLabel.cs">
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,9 +247,9 @@
     <None Include="Resources\1625542703_25-kartinkin-com-p-vinilovie-plastinki-fon-krasivie-foni-27.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icons\1674279585_catherineasquithgallery-com-p-fon-sero-korichnevii-korichnevii-gradient-14.jpg" />
-    <Content Include="Icons\icons8-закрыть-64.png" />
-    <Content Include="Icons\icons8-закрыть-67.png" />
+    <Folder Include="Icons\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Resources\png-clipart-compact-disc-phonograph-record-serato-scratch-live-vinyl-emulation-software-musical-instruments-angle-orange.png" />
     <Content Include="Resources\png-transparent-music-phonograph-record-google-play-music-composer-music-camera-lens-sound-music-download.png" />
     <Content Include="Resources\png-transparent-vinyl-record-artwork-phonograph-record-compact-disc-lp-record-disc-jockey-symbol-miscellaneous-classical-music-sound.png" />

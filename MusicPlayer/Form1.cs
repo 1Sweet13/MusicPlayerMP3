@@ -17,7 +17,7 @@ using System.Drawing.Drawing2D;
 namespace MusicPlayer
 {
 
-    public partial class Form1 : Form
+    public partial class Form1 : Form 
     {
 
         public Form1()
@@ -43,7 +43,7 @@ namespace MusicPlayer
             try
             {
                 var file = TagLib.File.Create(paths[track_list.SelectedIndex]);              
-                var bin = (byte[])(file.Tag.Pictures[0].Data.Data);             
+                var bin = file.Tag.Pictures[0].Data.Data;             
                 pic_art.Image = Image.FromStream(new MemoryStream(bin));
                 
 
@@ -87,8 +87,19 @@ namespace MusicPlayer
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
+            
+            if (label1.Left > -label1.Width)
+            {
+                label1.Left -= 1;
+            }
+            else
+            {
+                label1.Left = panel1.Width;
+            }
+
             p_bar.ForeColor = Color.Orange;
             p_bar.BackColor = Color.Black;
+
             if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
                 p_bar.Maximum = (int)player.Ctlcontrols.currentItem.duration;
@@ -124,6 +135,11 @@ namespace MusicPlayer
         private void label2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void btn_open_Click(object sender, EventArgs e)
