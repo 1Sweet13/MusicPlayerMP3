@@ -1,71 +1,79 @@
-﻿using AxWMPLib;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO; // Добавление библиотеки taglib.cs
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
-using System.IO; // Добавление библиотеки taglib.cs
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Security.Cryptography;
-using System.Drawing.Drawing2D;
 
 namespace MusicPlayer
 {
 
-    public partial class Form1 : Form 
+    public partial class Form1 : Form
     {
 
         public Form1()
         {
-            
+
             InitializeComponent();
             track_volume.Value = 20;
             lbl_volume.Text = "20%";
 
+
         }
 
+        string images = @"MusicPlayer.Properties.Resources._1625542703_25_kartinkin_com_p_vinilovie_plastinki_fon_krasivie_foni_27";
 
+        List<string> paths = new List<string>();
+        List<string> files = new List<string>();
 
-        string[] paths, files;
+        
+
 
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+            label1.Visible = true;
             player.URL = paths[track_list.SelectedIndex];
             label1.Text = files[track_list.SelectedIndex]; // Вывод названия при клике 
             player.Ctlcontrols.play();
-                    
+
             try
             {
-                var file = TagLib.File.Create(paths[track_list.SelectedIndex]);              
-                var bin = file.Tag.Pictures[0].Data.Data;             
-                pic_art.Image = Image.FromStream(new MemoryStream(bin));
-                
+                var file = TagLib.File.Create(paths[track_list.SelectedIndex]);
+                var bin = file.Tag.Pictures[0].Data.Data;
+               
+                if (false)
+                {
 
+                    pic_art.Image = Image.FromFile(images);
+                }
+                else
+                {
+                    Console.WriteLine(bin.Count());
+                    pic_art.Image = Image.FromStream(new MemoryStream(bin));
+                }
             }
             catch { }
-
-
         }
 
         private void btn_stop_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.stop();
+            label1.Visible = false;
+
         }
 
         private void btn_pause_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.pause();
+
         }
 
         private void btn_play_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.play();
+            label1.Visible = true;
         }
 
         private void btn_next_Click(object sender, EventArgs e)
@@ -87,24 +95,16 @@ namespace MusicPlayer
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            
-            if (label1.Left > -label1.Width)
-            {
-                label1.Left -= 1;
-            }
-            else
-            {
-                label1.Left = panel1.Width;
-            }
 
             p_bar.ForeColor = Color.Orange;
             p_bar.BackColor = Color.Black;
 
-            if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
-            {
+
+            if (player.playState == WMPPlayState.wmppsPlaying)
                 p_bar.Maximum = (int)player.Ctlcontrols.currentItem.duration;
-                p_bar.Value = (int)player.Ctlcontrols.currentPosition;
-            }
+            p_bar.Value = (int)player.Ctlcontrols.currentPosition;
+            
+
             try
             {
                 lbl_track_start.Text = player.Ctlcontrols.currentPositionString.ToString();
@@ -114,15 +114,20 @@ namespace MusicPlayer
             {
 
             }
+
         }
 
         private void p_bar_MouseDown(object sender, MouseEventArgs e)
         {
-            player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / p_bar.Width;
+            if(player.playState == WMPPlayState.wmppsPlaying || player.playState == WMPPlayState.wmppsPaused)
+            {
+                player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / p_bar.Width;
+            }
+          
         }
 
         private void track_volume_Scroll(object sender, EventArgs e)
-        { 
+        {
             player.settings.volume = track_volume.Value;
             lbl_volume.Text = track_volume.Value.ToString() + "%";
         }
@@ -137,37 +142,39 @@ namespace MusicPlayer
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void p_bar_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btn_open_Click(object sender, EventArgs e)
         {
-           
+
 
             OpenFileDialog ofd = new OpenFileDialog(); // Отображает диалоговое окно
 
             ofd.Multiselect = true; // Позволяет выбрать несколько файлов
-            
+
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+                var file = ofd.SafeFileNames;
 
-                files = ofd.SafeFileNames;
-                paths = ofd.FileNames;
+                files.AddRange(ofd.SafeFileNames.ToList());
+                paths.AddRange(ofd.FileNames.ToList());
 
                 label1.Text = ofd.SafeFileName; // Возвращает имя файла
 
-                for (int x = 0; x < files.Length; x++)
+                for (int x = 0; x < file.Length; x++)
                 {
-                    track_list.Items.Add(files[x]);
+                    track_list.Items.Add(file[x]);
 
                 }
-               
+
             }
-            
+
         }
 
+     
     }
 }

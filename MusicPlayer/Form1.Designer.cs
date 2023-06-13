@@ -179,7 +179,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(621, 386);
             this.panel1.TabIndex = 16;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lbl_track_start
             // 
@@ -197,20 +196,20 @@
             // p_bar
             // 
             this.p_bar.Location = new System.Drawing.Point(22, 117);
-            this.p_bar.Maximum = 200;
             this.p_bar.Name = "p_bar";
             this.p_bar.Size = new System.Drawing.Size(587, 10);
             this.p_bar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.p_bar.TabIndex = 6;
+            this.p_bar.Click += new System.EventHandler(this.p_bar_Click);
             this.p_bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.p_bar_MouseDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(17, 45);
+            this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(16, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 39);
+            this.label1.Size = new System.Drawing.Size(82, 33);
             this.label1.TabIndex = 16;
             this.label1.Text = "Name";
             // 
