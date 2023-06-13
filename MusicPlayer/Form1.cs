@@ -14,20 +14,15 @@ namespace MusicPlayer
 
         public Form1()
         {
-
             InitializeComponent();
-            track_volume.Value = 20;
-            lbl_volume.Text = "20%";
-
-
+            StartVolume();
         }
 
-        string images = @"MusicPlayer.Properties.Resources._1625542703_25_kartinkin_com_p_vinilovie_plastinki_fon_krasivie_foni_27";
-
+        //string images = @"Картинка";
         List<string> paths = new List<string>();
         List<string> files = new List<string>();
 
-        
+
 
 
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,19 +37,23 @@ namespace MusicPlayer
             {
                 var file = TagLib.File.Create(paths[track_list.SelectedIndex]);
                 var bin = file.Tag.Pictures[0].Data.Data;
-               
+
                 if (false)
                 {
 
-                    pic_art.Image = Image.FromFile(images);
+                    /*pic_art.Image = Image.FromFile(images)*/;
                 }
                 else
                 {
                     Console.WriteLine(bin.Count());
-                    pic_art.Image = Image.FromStream(new MemoryStream(bin));
+                    pic_art.Image = Image.FromStream(new MemoryStream(bin)); // Проблема с показом картинки 
                 }
             }
-            catch { }
+            catch
+            {
+
+            }
+
         }
 
         private void btn_stop_Click(object sender, EventArgs e)
@@ -72,24 +71,17 @@ namespace MusicPlayer
 
         private void btn_play_Click(object sender, EventArgs e)
         {
-            player.Ctlcontrols.play();
-            label1.Visible = true;
+            PlayClick();
         }
 
         private void btn_next_Click(object sender, EventArgs e)
         {
-            if (track_list.SelectedIndex < track_list.Items.Count - 1)
-            {
-                track_list.SelectedIndex = track_list.SelectedIndex + 1;
-            }
+            NextClick();
         }
 
         private void btn_preview_Click(object sender, EventArgs e)
         {
-            if (track_list.SelectedIndex > 0)
-            {
-                track_list.SelectedIndex = track_list.SelectedIndex - 1;
-            }
+            PreviewClick();
         }
 
 
@@ -103,7 +95,7 @@ namespace MusicPlayer
             if (player.playState == WMPPlayState.wmppsPlaying)
                 p_bar.Maximum = (int)player.Ctlcontrols.currentItem.duration;
             p_bar.Value = (int)player.Ctlcontrols.currentPosition;
-            
+
 
             try
             {
@@ -119,11 +111,9 @@ namespace MusicPlayer
 
         private void p_bar_MouseDown(object sender, MouseEventArgs e)
         {
-            if(player.playState == WMPPlayState.wmppsPlaying || player.playState == WMPPlayState.wmppsPaused)
-            {
+            if (player.playState == WMPPlayState.wmppsPlaying || player.playState == WMPPlayState.wmppsPaused)
                 player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / p_bar.Width;
-            }
-          
+
         }
 
         private void track_volume_Scroll(object sender, EventArgs e)
@@ -142,19 +132,11 @@ namespace MusicPlayer
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void p_bar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_open_Click(object sender, EventArgs e)
         {
-
-
             OpenFileDialog ofd = new OpenFileDialog(); // Отображает диалоговое окно
 
             ofd.Multiselect = true; // Позволяет выбрать несколько файлов
-
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -175,6 +157,32 @@ namespace MusicPlayer
 
         }
 
-     
+        public void StartVolume()
+        {
+            track_volume.Value = 20;
+            lbl_volume.Text = "20%";
+
+        }
+        public void NextClick() 
+        {
+            if (track_list.SelectedIndex < track_list.Items.Count - 1)
+            {
+                track_list.SelectedIndex = track_list.SelectedIndex + 1;
+            }
+        }        
+        public void PreviewClick()
+        {
+            if (track_list.SelectedIndex > 0)
+            {
+                track_list.SelectedIndex = track_list.SelectedIndex - 1;
+            }
+        }
+        public void PlayClick()
+        {
+            player.Ctlcontrols.play();
+            label1.Visible = true;
+        }
+
+
     }
 }
