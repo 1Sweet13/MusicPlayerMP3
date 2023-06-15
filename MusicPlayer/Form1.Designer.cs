@@ -200,7 +200,6 @@
             this.p_bar.Size = new System.Drawing.Size(587, 10);
             this.p_bar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.p_bar.TabIndex = 6;
-            this.p_bar.Click += new System.EventHandler(this.p_bar_Click);
             this.p_bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.p_bar_MouseDown);
             // 
             // label1

@@ -22,7 +22,7 @@ namespace MusicPlayer
         List<string> paths = new List<string>();
         List<string> files = new List<string>();
 
-
+        string _image = @"C:\Users\Kirill\Desktop\MusicPlayerMP3-main\MusicPlayer\Resources\1625542703_25-kartinkin-com-p-vinilovie-plastinki-fon-krasivie-foni-27.jpg";
 
 
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,21 +37,12 @@ namespace MusicPlayer
             {
                 var file = TagLib.File.Create(paths[track_list.SelectedIndex]);
                 var bin = file.Tag.Pictures[0].Data.Data;
+                pic_art.Image = Image.FromStream(new MemoryStream(bin));
 
-                if (false)
-                {
-
-                    /*pic_art.Image = Image.FromFile(images)*/;
-                }
-                else
-                {
-                    Console.WriteLine(bin.Count());
-                    pic_art.Image = Image.FromStream(new MemoryStream(bin)); // Проблема с показом картинки 
-                }
             }
             catch
             {
-
+                pic_art.Image = Image.FromFile(_image);
             }
 
         }
@@ -163,13 +154,13 @@ namespace MusicPlayer
             lbl_volume.Text = "20%";
 
         }
-        public void NextClick() 
+        public void NextClick()
         {
             if (track_list.SelectedIndex < track_list.Items.Count - 1)
             {
                 track_list.SelectedIndex = track_list.SelectedIndex + 1;
             }
-        }        
+        }
         public void PreviewClick()
         {
             if (track_list.SelectedIndex > 0)
