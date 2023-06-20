@@ -118,28 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="timpoulton-turntable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\timpoulton-turntable.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="png-transparent-vinyl-record-artwork-phonograph-record-compact-disc-lp-record-disc-jockey-symbol-miscellaneous-classical-music-sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\png-transparent-vinyl-record-artwork-phonograph-record-compact-disc-lp-record-disc-jockey-symbol-miscellaneous-classical-music-sound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1625542703_25-kartinkin-com-p-vinilovie-plastinki-fon-krasivie-foni-27" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1625542703_25-kartinkin-com-p-vinilovie-plastinki-fon-krasivie-foni-27.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Plastink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Plastink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="638070-main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\638070-main.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="108593344_vinylrecordanimation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\108593344_vinylrecordanimation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="png-transparent-music-phonograph-record-google-play-music-composer-music-camera-lens-sound-music-download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\png-transparent-music-phonograph-record-google-play-music-composer-music-camera-lens-sound-music-download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="png-clipart-compact-disc-phonograph-record-serato-scratch-live-vinyl-emulation-software-musical-instruments-angle-orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\png-clipart-compact-disc-phonograph-record-serato-scratch-live-vinyl-emulation-software-musical-instruments-angle-orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1674279585_catherineasquithgallery-com-p-fon-sero-korichnevii-korichnevii-gradient-14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1674279585_catherineasquithgallery-com-p-fon-sero-korichnevii-korichnevii-gradient-14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicPlayer.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO; // Добавление библиотеки taglib.cs
@@ -16,22 +17,22 @@ namespace MusicPlayer
         {
             InitializeComponent();
             StartVolume();
+            p_bar.ForeColor = Color.Orange;
+            
+
         }
 
-        //string images = @"Картинка";
         List<string> paths = new List<string>();
         List<string> files = new List<string>();
-
-        string _image = @"C:\Users\Kirill\Desktop\MusicPlayerMP3-main\MusicPlayer\Resources\1625542703_25-kartinkin-com-p-vinilovie-plastinki-fon-krasivie-foni-27.jpg";
 
 
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
 
             label1.Visible = true;
             player.URL = paths[track_list.SelectedIndex];
-            label1.Text = files[track_list.SelectedIndex]; // Вывод названия при клике 
-            player.Ctlcontrols.play();
+            label1.Text = files[track_list.SelectedIndex]; // Вывод названия при клике            
 
             try
             {
@@ -39,20 +40,17 @@ namespace MusicPlayer
                 var bin = file.Tag.Pictures[0].Data.Data;
                 pic_art.Image = Image.FromStream(new MemoryStream(bin));
 
+
             }
             catch
             {
-                pic_art.Image = Image.FromFile(_image);
+                pic_art.Image = Resources.Plastink;
             }
+           
+         
 
         }
 
-        private void btn_stop_Click(object sender, EventArgs e)
-        {
-            player.Ctlcontrols.stop();
-            label1.Visible = false;
-
-        }
 
         private void btn_pause_Click(object sender, EventArgs e)
         {
@@ -60,33 +58,15 @@ namespace MusicPlayer
 
         }
 
-        private void btn_play_Click(object sender, EventArgs e)
-        {
-            PlayClick();
-        }
-
-        private void btn_next_Click(object sender, EventArgs e)
-        {
-            NextClick();
-        }
-
-        private void btn_preview_Click(object sender, EventArgs e)
-        {
-            PreviewClick();
-        }
-
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
 
-            p_bar.ForeColor = Color.Orange;
-            p_bar.BackColor = Color.Black;
-
-
+                     
             if (player.playState == WMPPlayState.wmppsPlaying)
                 p_bar.Maximum = (int)player.Ctlcontrols.currentItem.duration;
-            p_bar.Value = (int)player.Ctlcontrols.currentPosition;
-
+                p_bar.Value = (int)player.Ctlcontrols.currentPosition;
+            
 
             try
             {
@@ -129,6 +109,7 @@ namespace MusicPlayer
 
             ofd.Multiselect = true; // Позволяет выбрать несколько файлов
 
+
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 var file = ofd.SafeFileNames;
@@ -150,8 +131,8 @@ namespace MusicPlayer
 
         public void StartVolume()
         {
-            track_volume.Value = 20;
-            lbl_volume.Text = "20%";
+            track_volume.Value = 10;
+            lbl_volume.Text = "10%";
 
         }
         public void NextClick()
@@ -175,5 +156,52 @@ namespace MusicPlayer
         }
 
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            NextClick();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            PreviewClick();
+        }
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.play();      
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.pause();
+            
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.stop();
+            label1.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (track_list.SelectedIndex != -1)
+                    track_list.Items.RemoveAt(track_list.SelectedIndex);                   
+                else
+                {
+                    MessageBox.Show("выберите элемент");
+                }
+                
+            }
+            catch
+            
+            {             
+                    
+            }
+           
+        }
     }
 }

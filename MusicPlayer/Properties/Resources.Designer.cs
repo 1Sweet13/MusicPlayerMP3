@@ -63,9 +63,9 @@ namespace MusicPlayer.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _108593344_vinylrecordanimation {
+        internal static System.Drawing.Bitmap Next {
             get {
-                object obj = ResourceManager.GetObject("108593344_vinylrecordanimation", resourceCulture);
+                object obj = ResourceManager.GetObject("Next", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MusicPlayer.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1625542703_25_kartinkin_com_p_vinilovie_plastinki_fon_krasivie_foni_27 {
+        internal static System.Drawing.Bitmap Pause {
             get {
-                object obj = ResourceManager.GetObject("1625542703_25-kartinkin-com-p-vinilovie-plastinki-fon-krasivie-foni-27", resourceCulture);
+                object obj = ResourceManager.GetObject("Pause", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,10 +83,9 @@ namespace MusicPlayer.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1674279585_catherineasquithgallery_com_p_fon_sero_korichnevii_korichnevii_gradient_14 {
+        internal static System.Drawing.Bitmap Plastink {
             get {
-                object obj = ResourceManager.GetObject("1674279585_catherineasquithgallery-com-p-fon-sero-korichnevii-korichnevii-gradien" +
-                        "t-14", resourceCulture);
+                object obj = ResourceManager.GetObject("Plastink", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -94,9 +93,9 @@ namespace MusicPlayer.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _638070_main {
+        internal static System.Drawing.Bitmap Play {
             get {
-                object obj = ResourceManager.GetObject("638070-main", resourceCulture);
+                object obj = ResourceManager.GetObject("Play", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -104,10 +103,9 @@ namespace MusicPlayer.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap png_clipart_compact_disc_phonograph_record_serato_scratch_live_vinyl_emulation_software_musical_instruments_angle_orange {
+        internal static System.Drawing.Bitmap Preview {
             get {
-                object obj = ResourceManager.GetObject("png-clipart-compact-disc-phonograph-record-serato-scratch-live-vinyl-emulation-so" +
-                        "ftware-musical-instruments-angle-orange", resourceCulture);
+                object obj = ResourceManager.GetObject("Preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,31 +113,9 @@ namespace MusicPlayer.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap png_transparent_music_phonograph_record_google_play_music_composer_music_camera_lens_sound_music_download {
+        internal static System.Drawing.Bitmap Stop {
             get {
-                object obj = ResourceManager.GetObject("png-transparent-music-phonograph-record-google-play-music-composer-music-camera-l" +
-                        "ens-sound-music-download", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap png_transparent_vinyl_record_artwork_phonograph_record_compact_disc_lp_record_disc_jockey_symbol_miscellaneous_classical_music_sound {
-            get {
-                object obj = ResourceManager.GetObject("png-transparent-vinyl-record-artwork-phonograph-record-compact-disc-lp-record-dis" +
-                        "c-jockey-symbol-miscellaneous-classical-music-sound", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap timpoulton_turntable {
-            get {
-                object obj = ResourceManager.GetObject("timpoulton-turntable", resourceCulture);
+                object obj = ResourceManager.GetObject("Stop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
